@@ -1,27 +1,27 @@
 # Post-PSLE Social Studies Teacher Portal
 
-A static, self-contained version of the teacher portal, ready to host on GitHub Pages.
+Static export of the teacher/fieldwork portal, ready for GitHub Pages.
 
-## What's in this folder
+## Files
 
-- `index.html` — the whole site (one file, all styles inline/embedded).
-- `assets/hero-video.mp4` — the hero background video (~6.2 MB).
-- `assets/museum-photo.png` — the Learning Journey photo (~10.3 MB).
+- `index.html` — the whole site (plain HTML/CSS, no build step, no external framework)
+- `assets/hero-video.mp4` — hero background video
+- `assets/timeline.jpg` — Learning Journey timeline image (compressed from the original PNG for web)
 
-## How to put it on GitHub Pages
+## Hosting on GitHub Pages
 
-1. **Create a repo.** On github.com, click "New repository." Give it a name (e.g. `pbh-ss-portal`), and set it to **Public** (GitHub Pages on a free account only serves public repos). Don't add a README/license from GitHub's side — you already have files to upload.
-2. **Upload these files.** Easiest way: on the new repo's page, click "uploading an existing file," then drag in `index.html` and the whole `assets` folder (drag the folder itself — GitHub preserves the `assets/...` path). Commit the upload.
-   - Or, if you're comfortable with git on your computer: clone the empty repo, copy these three items into it, then `git add .`, `git commit -m "Add portal"`, `git push`.
-3. **Turn on Pages.** In the repo, go to **Settings → Pages**. Under "Build and deployment," set Source to **Deploy from a branch**, Branch to **main**, folder to **/ (root)**. Save.
-4. **Wait ~1 minute**, then refresh that same Settings → Pages screen — it'll show your live URL, something like:
-   `https://<your-github-username>.github.io/pbh-ss-portal/`
-5. Share that link with whoever needs it.
+1. Create a new GitHub repository (or use an existing one).
+2. Add these files to the repo root, keeping the `assets/` folder alongside `index.html`.
+3. Commit and push.
+4. In the repo, go to **Settings → Pages**.
+5. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+6. Pick the branch (e.g. `main`) and folder `/ (root)`, then **Save**.
+7. GitHub will publish the site at `https://<your-username>.github.io/<repo-name>/` within a minute or two.
 
-## Updating it later
+If you'd rather keep the site in a subfolder (e.g. `docs/`), put `index.html` and `assets/` inside that folder instead and select it as the Pages folder in step 6.
 
-Any time you want to change something, edit `index.html` (or replace a file in `assets/`) and push/upload the new version — GitHub Pages redeploys automatically within a minute or two of a commit landing on the `main` branch.
+## Notes
 
-## Note on visibility
-
-The "For internal school use only · Not for external distribution" footer line has been removed for the public version. A few resource links (SharePoint, the Copilot agent) still point to your school's systems — those are fine to keep, since visitors are prompted to sign in with a Pathlight account before they can open them.
+- The video autoplays muted and loops, which all major browsers allow without a user gesture.
+- All external links (SharePoint, National Museum, Copilot Chat) are unchanged from the original.
+- This is a static copy — the "Learning Journey" content and lesson list are hand-written into the HTML rather than generated, so any future edits to lesson titles/links need to be made directly in `index.html`.
